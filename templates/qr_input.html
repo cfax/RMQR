@@ -1,0 +1,16 @@
+<!doctype html>
+
+<p>Enter the Base64-encoded string you find in your email.</p>
+<p>It should start with <code>/9j/4AAQSkZJRgAB</code>, as you can see in this screenshot:</p>
+<img src="https://mindthetest.files.wordpress.com/2023/01/qr_b64_inline.png"
+     alt="Screenshot of the source code of an email from Royal Mail contaning a Base64-encoded image of a QR code" />
+<p>No QR code is kept on this server.</p>
+<p>We offer this tool "as is" and we cannot be held liable for any issues that this tool might cause you.</p>
+
+
+<form method="POST" action="/">
+    {{ form.csrf_token }}
+    {{ form.b64_string.label(style="display: block;") }}
+    {{ form.b64_string(style="width: 50em; height: 75%;") }}
+    <input type="submit" value="Go">
+</form>
